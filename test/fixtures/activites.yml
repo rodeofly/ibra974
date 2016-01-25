@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  schedule_at: 2016-01-25 00:02:42
+  level_id: 1
+  categorie_id: 1
+  archetype_id: 1
+  url: MyString
+  citation_id: 1
+  enonce: MyText
+  doc1_id: 1
+  doc2_id: 1
+  docProf_id: 1
+  docEval_id: 1
+
+two:
+  title: MyString
+  schedule_at: 2016-01-25 00:02:42
+  level_id: 1
+  categorie_id: 1
+  archetype_id: 1
+  url: MyString
+  citation_id: 1
+  enonce: MyText
+  doc1_id: 1
+  doc2_id: 1
+  docProf_id: 1
+  docEval_id: 1

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @activite.title %>
+</p>
+
+<p>
+  <strong>Schedule at:</strong>
+  <%= @activite.schedule_at %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @activite.level_id %>
+</p>
+
+<p>
+  <strong>Categorie:</strong>
+  <%= @activite.categorie_id %>
+</p>
+
+<p>
+  <strong>Archetype:</strong>
+  <%= @activite.archetype_id %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @activite.url %>
+</p>
+
+<p>
+  <strong>Citation:</strong>
+  <%= @activite.citation_id %>
+</p>
+
+<p>
+  <strong>Enonce:</strong>
+  <%= @activite.enonce %>
+</p>
+
+<p>
+  <strong>Doc1:</strong>
+  <%= @activite.doc1_id %>
+</p>
+
+<p>
+  <strong>Doc2:</strong>
+  <%= @activite.doc2_id %>
+</p>
+
+<p>
+  <strong>Docprof:</strong>
+  <%= @activite.docProf_id %>
+</p>
+
+<p>
+  <strong>Doceval:</strong>
+  <%= @activite.docEval_id %>
+</p>
+
+<%= link_to 'Edit', edit_activite_path(@activite) %> |
+<%= link_to 'Back', activites_path %>

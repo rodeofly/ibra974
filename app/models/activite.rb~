@@ -1,0 +1,4 @@
+class Activite < ActiveRecord::Base
+  has_one :citation
+
+end
