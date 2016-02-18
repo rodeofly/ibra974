@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218042022) do
+ActiveRecord::Schema.define(version: 20160218052347) do
 
   create_table "activites", force: :cascade do |t|
     t.string   "title"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20160218042022) do
     t.string   "url"
     t.integer  "citation_id"
     t.text     "enonce"
-    t.integer  "doc1_id"
-    t.integer  "doc2_id"
     t.integer  "docProf_id"
     t.integer  "docEval_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "image1_uid"
+    t.string   "image2_uid"
+    t.string   "image3_uid"
   end
 
   create_table "citations", force: :cascade do |t|

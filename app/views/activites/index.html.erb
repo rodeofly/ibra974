@@ -6,17 +6,13 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Schedule at</th>
+
       <th>Level</th>
       <th>Categorie</th>
       <th>Archetype</th>
-      <th>Url</th>
-      <th>Citation</th>
-      <th>Enonce</th>
-      <th>Doc1</th>
-      <th>Doc2</th>
-      <th>Docprof</th>
-      <th>Doceval</th>
+
+      
+     
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,20 +21,17 @@
     <% @activites.each do |activite| %>
       <tr>
         <td><%= activite.title %></td>
-        <td><%= activite.schedule_at %></td>
+
         <td><%= activite.level_id %></td>
         <td><%= activite.categorie_id %></td>
         <td><%= activite.archetype_id %></td>
-        <td><%= activite.url %></td>
-        <td><%= activite.citation_id %></td>
-        <td><%= activite.enonce %></td>
-        <td><%= activite.doc1_id %></td>
-        <td><%= activite.doc2_id %></td>
-        <td><%= activite.docProf_id %></td>
-        <td><%= activite.docEval_id %></td>
-        <td><%= link_to 'Show', activite %></td>
-        <td><%= link_to 'Edit', edit_activite_path(activite) %></td>
-        <td><%= link_to 'Destroy', activite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        
+        
+        
+        <td><%= link_to 'Voir', activite %></td>
+        <td><%= link_to 'Editer', rails_admin.edit_path(model_name: 'activite', id: activite.id) %></td>
+        <td><%= link_to 'Supprimer', activite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Activite', new_activite_path %>
+<%= link_to 'Nouvelle activité', rails_admin.new_path(model_name: 'activite') %> |

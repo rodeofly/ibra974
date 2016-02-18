@@ -1,55 +1,50 @@
 <p id="notice"><%= notice %></p>
+<table class="cartouche">
+  <tr>
+    <th>Séquence   </th>
+    <th>Activité   </th>
+    <th>Date prévue</th>
+    <th>Niveau     </th>
+    <th>Catégorie  </th>
+    <th>Type       </th>
+    <th>Lien       </th>
+  </tr>
+  
+  <tr>
+    <td>1</td>
+    <td><%= @activite.id %></td>
+    <td><%= @activite.schedule_at %></td>
+    <td><%= @activite.level_id %></td>
+    <td><%= @activite.categorie_id %></td>
+    <td><%= @activite.archetype_id %></td>
+    <td><%= @activite.url %></td>
+  </tr>
+  
+  <tr>
+    <td colspan="7" class="quote">
+     <h1><q><%= @activite.citation.quote %></q></h1>
+     <h2><%= @activite.citation.author %></h2>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="7">
+    <h1><%= @activite.title %></h1>
+    </td>
+  </tr>
+  
+</table>
+
 
 <p>
-  <strong>Title:</strong>
-  <%= @activite.title %>
+  <strong>Enoncé : </strong><br>
+  <p class="enoncé"><%= @activite.enonce %></p>
 </p>
-
-<p>
-  <strong>Schedule at:</strong>
-  <%= @activite.schedule_at %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @activite.level_id %>
-</p>
-
-<p>
-  <strong>Categorie:</strong>
-  <%= @activite.categorie_id %>
-</p>
-
-<p>
-  <strong>Archetype:</strong>
-  <%= @activite.archetype_id %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @activite.url %>
-</p>
-
-<p>
-  <strong>Citation:</strong>
-  <%= @activite.citation_id %>
-</p>
-
-<p>
-  <strong>Enonce:</strong>
-  <%= @activite.enonce %>
-</p>
-
-<p>
-  <strong>Doc1:</strong>
-  <%= @activite.doc1_id %>
-</p>
-
-<p>
-  <strong>Doc2:</strong>
-  <%= @activite.doc2_id %>
-</p>
-
+<center>
+<%= image_tag @activite.image1.thumb('400x200#').url if @activite.image1_stored? %>
+<%= image_tag @activite.image2.thumb('400x200#').url if @activite.image1_stored? %>
+<%= image_tag @activite.image3.thumb('400x200#').url if @activite.image1_stored? %>
+</center>
 <p>
   <strong>Docprof:</strong>
   <%= @activite.docProf_id %>
@@ -60,5 +55,5 @@
   <%= @activite.docEval_id %>
 </p>
 
-<%= link_to 'Edit', edit_activite_path(@activite) %> |
-<%= link_to 'Back', activites_path %>
+<%= link_to 'Editer cette activité', rails_admin.edit_path(model_name: 'activite', id: @activite.id) %> |
+<%= link_to 'Liste des activités', activites_path %>

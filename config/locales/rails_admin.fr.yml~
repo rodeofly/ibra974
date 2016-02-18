@@ -1,12 +1,10 @@
 fr:
   admin:
-    date:
+    datetime:
       formats:
-        long: "%Y-%m-%d"
-    timestamp:
-      formats:
-        long: "%Y-%m-%d %H:%M:%S"
-    
+        default: ! '%d/%m/%Y'
+        long: ! '%d %B %Y %H-%M'
+        short: ! '%d %b' 
     js:
       true: Vrai
       false: Faux
