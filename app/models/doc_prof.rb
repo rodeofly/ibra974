@@ -13,13 +13,14 @@ class DocProf < ActiveRecord::Base
 
   rails_admin do 
     edit do
-      # For RailsAdmin >= 0.5.0
+      field :activite_id
+      field :level_id
+      field :domaines
+      field :materiels
+      field :prerequis, :ck_editor
       field :competences, :ck_editor
       field :organisation, :ck_editor
-      # For RailsAdmin < 0.5.0
-      # field :description do
-      #   ckeditor true
-      # end
+      field :aide, :ck_editor
     end
     
   end

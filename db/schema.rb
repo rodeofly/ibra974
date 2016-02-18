@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218082857) do
+ActiveRecord::Schema.define(version: 20160218154525) do
 
   create_table "activites", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160218082857) do
     t.string   "url"
     t.integer  "citation_id"
     t.text     "enonce"
+    t.integer  "doc2_id"
     t.integer  "doc_prof_id"
     t.integer  "doc_eval_id"
     t.datetime "created_at",   null: false
@@ -37,6 +38,23 @@ ActiveRecord::Schema.define(version: 20160218082857) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_uid",                  null: false
+    t.string   "data_name",                 null: false
+    t.string   "data_mime_type"
+    t.integer  "data_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type", limit: 30
+    t.string   "type",           limit: 30
+    t.integer  "data_width"
+    t.integer  "data_height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
   create_table "doc_profs", force: :cascade do |t|
     t.integer  "activite_id"

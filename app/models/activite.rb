@@ -22,13 +22,29 @@ class Activite < ActiveRecord::Base
       field :level_id
       field :categorie_id
       field :archetype_id
-      field :doc_prof_id
+      field :enonce
       field :image1
       field :image2
       field :image3
       field :schedule_at do
         strftime_format '%d %B %Y à %Hh%M'
       end
+      field :doc_prof_id
+    end
+    
+    edit do
+      field :title
+      field :level_id
+      field :categorie_id
+      field :archetype_id
+      field :enonce, :ck_editor
+      field :image1
+      field :image2
+      field :image3
+      field :schedule_at do
+        strftime_format '%d-%m-%Y %H:%M'
+      end
+      field :doc_prof
     end
   end
  
