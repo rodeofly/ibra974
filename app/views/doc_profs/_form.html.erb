@@ -1,0 +1,49 @@
+<%= form_for(@doc_prof) do |f| %>
+  <% if @doc_prof.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doc_prof.errors.count, "error") %> prohibited this doc_prof from being saved:</h2>
+
+      <ul>
+      <% @doc_prof.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :activite_id %><br>
+    <%= f.number_field :activite_id %>
+  </div>
+  <div class="field">
+    <%= f.label :level_id %><br>
+    <%= f.number_field :level_id %>
+  </div>
+  <div class="field">
+    <%= f.label :domaines %><br>
+    <%= f.text_area :domaines %>
+  </div>
+  <div class="field">
+    <%= f.label :materiels %><br>
+    <%= f.text_area :materiels %>
+  </div>
+  <div class="field">
+    <%= f.label :prerequis %><br>
+    <%= f.text_area :prerequis %>
+  </div>
+  <div class="field">
+    <%= f.label :competences %><br>
+    <%= f.text_area :competences %>
+  </div>
+  <div class="field">
+    <%= f.label :organisation %><br>
+    <%= f.text_area :organisation %>
+  </div>
+  <div class="field">
+    <%= f.label :aide %><br>
+    <%= f.text_area :aide %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

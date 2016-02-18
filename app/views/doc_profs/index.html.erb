@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Doc Profs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activite</th>
+      <th>Level</th>
+      <th>Domaines</th>
+      <th>Materiels</th>
+      <th>Prerequis</th>
+      <th>Competences</th>
+      <th>Organisation</th>
+      <th>Aide</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doc_profs.each do |doc_prof| %>
+      <tr>
+        <td><%= doc_prof.activite_id %></td>
+        <td><%= doc_prof.level_id %></td>
+        <td><%= doc_prof.domaines %></td>
+        <td><%= doc_prof.materiels %></td>
+        <td><%= doc_prof.prerequis %></td>
+        <td><%= doc_prof.competences %></td>
+        <td><%= doc_prof.organisation %></td>
+        <td><%= doc_prof.aide %></td>
+        <td><%= link_to 'Show', doc_prof %></td>
+        <td><%= link_to 'Edit', edit_doc_prof_path(doc_prof) %></td>
+        <td><%= link_to 'Destroy', doc_prof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doc prof', new_doc_prof_path %>

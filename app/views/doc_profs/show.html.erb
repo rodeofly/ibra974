@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activite:</strong>
+  <%= @doc_prof.activite_id %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @doc_prof.level_id %>
+</p>
+
+<p>
+  <strong>Domaines:</strong>
+  <ul>
+  <% @doc_prof.get_domaines.each do |element| %>
+    <li><%= element %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Materiels:</strong>
+  <ul>
+  <% @doc_prof.get_materiels.each do |element| %>
+    <li><%= element %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Prerequis:</strong>
+  <%= @doc_prof.prerequis %>
+</p>
+
+<p>
+  <strong>Competences:</strong>
+  <%= @doc_prof.competences.html_safe %>
+</p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @doc_prof.organisation.html_safe %>
+</p>
+
+<p>
+  <strong>Aide:</strong>
+  <%= @doc_prof.aide %>
+</p>
+
+<%= link_to 'Edit', rails_admin.edit_path(model_name: 'doc_prof', id: @doc_prof.id) %> | |
+<%= link_to 'Back', doc_profs_path %>

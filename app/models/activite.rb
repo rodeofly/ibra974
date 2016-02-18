@@ -1,6 +1,6 @@
 class Activite < ActiveRecord::Base
   belongs_to :citation
-
+  belongs_to :doc_prof
   extend Enumerize
 
   enumerize :level_id, in: {'Indiquer le niveau' => nil, '*' => 1, '**' => 2, '***' => 3}
@@ -18,6 +18,14 @@ class Activite < ActiveRecord::Base
     end
     
     list do
+      field :title
+      field :level_id
+      field :categorie_id
+      field :archetype_id
+      field :doc_prof_id
+      field :image1
+      field :image2
+      field :image3
       field :schedule_at do
         strftime_format '%d %B %Y à %Hh%M'
       end

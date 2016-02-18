@@ -31,6 +31,7 @@ gem 'devise-i18n-views'
 gem 'rails_admin'
 gem 'dragonfly', '~> 1.0.12'
 gem 'enumerize'
+gem 'ckeditor'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
