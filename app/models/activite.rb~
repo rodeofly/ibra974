@@ -14,7 +14,7 @@ class Activite < ActiveRecord::Base
   rails_admin do 
     
     configure :schedule_at do
-        strftime_format '%d-%m-%Y %H:%M:%S'
+        strftime_format '%d-%m-%Y %H:%M'
     end
     
     list do
