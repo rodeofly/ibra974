@@ -39,9 +39,8 @@ RailsAdmin.config do |config|
     delete
     show_in_app
     
-    configure :date_field_name, :date do
-      date_format :default
-    end
+    
+    
     ## With an audit adapter, you can add:
     # history_index
     # history_show
