@@ -38,17 +38,85 @@
 
 <p>
   <strong>Enoncé : </strong><br>
-  <p class="enoncé"><%= @activite.enonce %></p>
+  <p class="enoncé"><%= @activite.enonce.html_safe %></p>
 </p>
 <center>
 <%= image_tag @activite.image1.thumb('400x200#').url if @activite.image1_stored? %>
 <%= image_tag @activite.image2.thumb('400x200#').url if @activite.image1_stored? %>
 <%= image_tag @activite.image3.thumb('400x200#').url if @activite.image1_stored? %>
 </center>
+
+
+<h1>Fiche Professeur</h1>
+
+<table class="doc_prof">
+  <tr>
+      <td>Niveau</td>
+      <td>Domaines</td>
+      <td>Prérequis</td>
+      <td>Materiel - Logiciel</td>
+      
+  </tr>
+  <tr>
+      <td><%= @activite.doc_prof.level_id %></td>
+      <td>
+        <ul>
+          <% @activite.doc_prof.get_domaines.each do |element| %>
+            <li><%= element %></li>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= @activite.doc_prof.prerequis.html_safe %></td>
+      <td>
+        <ul>
+          <% @activite.doc_prof.get_materiels.each do |element| %>
+            <li><%= element %></li>
+          <% end %>
+        </ul>
+      </td>
+      
+  </tr>
+  
+  <tr>
+    <td colspan="3">Organisation</td>
+    <td>Compétences et Objectifs pédagogiques</td>
+    
+  </tr>
+  
+  <tr>
+    <td colspan="3"  class="organisation"><%= @activite.doc_prof.organisation.html_safe %> </td>
+    <td class="competences"> <%= @activite.doc_prof.competences.html_safe %> </td>  
+    
+  </tr>
+</table>
+
 <p>
-  <strong>Docprof:</strong>
-  <%= @activite.doc_prof_id %>
+  <strong>Aide:</strong>
+  <%= @activite.doc_prof.aide.html_safe %>
 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p>
   <strong>Doceval:</strong>

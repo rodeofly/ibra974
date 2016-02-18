@@ -30,7 +30,7 @@
 
 <p>
   <strong>Prerequis:</strong>
-  <%= @doc_prof.prerequis %>
+  <%= @doc_prof.prerequis.html_safe %>
 </p>
 
 <p>
@@ -45,7 +45,7 @@
 
 <p>
   <strong>Aide:</strong>
-  <%= @doc_prof.aide %>
+  <%= @doc_prof.aide.html_safe %>
 </p>
 
 <%= link_to 'Edit', rails_admin.edit_path(model_name: 'doc_prof', id: @doc_prof.id) %> | |
